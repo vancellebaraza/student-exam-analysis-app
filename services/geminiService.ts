@@ -3,7 +3,7 @@ import { GoogleGenAI, Type } from "@google/genai";
 import { StudyNotes } from "../types";
 
 export async function generateStudyNotes(content: string): Promise<StudyNotes> {
-  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+  const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY });
   
   const response = await ai.models.generateContent({
     model: 'gemini-3-flash-preview',
